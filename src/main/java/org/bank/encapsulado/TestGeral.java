@@ -12,7 +12,7 @@ public class TestGeral {
         conta.setTitular(cliente);
         conta.setAgencia(2115);
         conta.setNumero(603037);
-        conta.deposita(1000);
+        conta.deposita(2000);
 
         System.out.println("Cliente: " + conta.getTitular().getNome());
         System.out.println("CPF: " + cliente.getCpf());
