@@ -7,18 +7,31 @@ public class Conta {
     private int agencia;
     private int numero;
     private Cliente titular;
+    private static int total = 0;
 
     public void deposita(double valor) {
         saldo += valor;
     }
 
-    public boolean saca(double valor) {
+    public double saca(double valor) {
         if (this.saldo >= valor) {
             this.saldo -= valor;
-            return true;
+            System.out.println("Saque efetuado");
+            return valor;
         } else {
-            return false;
+            System.out.println("Saque negado");
+            return saldo;
         }
+    }
+
+    public Conta() {
+    }
+
+    public Conta(int agencia, int numero) {
+        Conta.total++;
+        //System.out.println("O total de contas é" + Conta.total);
+        this.agencia = agencia;
+        this.numero = numero;
     }
 
     public boolean transfere(double valor, Conta destino) {
@@ -35,6 +48,10 @@ public class Conta {
     }
 
     public void setAgencia(int agencia) {
+        if (agencia <= 0){
+            System.out.println("Nao pode valor menor igual a 0");
+            return;
+        }
         this.agencia = agencia;
     }
 
@@ -51,6 +68,19 @@ public class Conta {
     }
     public Cliente getTitular(){
         return titular;
+    }
+
+    public void retornaCliente(Conta conta, Cliente cliente){
+        System.out.println("Cliente: " + conta.getTitular().getNome());
+        System.out.println("CPF: " + cliente.getCpf());
+        System.out.println("Profissao: " + cliente.getProfissao());
+        System.out.println("Agencia: " + conta.getAgencia());
+        System.out.println("Numero da conta: " + conta.getNumero());
+        System.out.println("Saldo disponivel R$: " + conta.getSaldo());
+
+    }
+    public static int getTotal(){
+        return Conta.total;
     }
 
 }
