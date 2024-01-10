@@ -29,7 +29,7 @@ public class TestUsuario {
             conta.deposita(teclado.nextInt());
         }
 
-        System.out.println("Deseja sacar?");
+        System.out.print("Deseja sacar? \n SIM ou NAO \n");
         escolha = teclado.next();
         if (escolha.equals("SIM") || escolha.equals("sim")) {
             System.out.println("Informe o valor para sacar");
