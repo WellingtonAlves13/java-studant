@@ -10,8 +10,8 @@ public class TestGeral {
         cliente.setProfissao("Developer");
 
         conta.setTitular(cliente);
-        conta.setAgencia(1521);
-        conta.setNumero(306037);
+        conta.setAgencia(2115);
+        conta.setNumero(603037);
         conta.deposita(1000);
 
         System.out.println("Cliente: " + conta.getTitular());
