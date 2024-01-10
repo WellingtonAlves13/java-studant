@@ -14,7 +14,7 @@ public class TestGeral {
         conta.setNumero(306037);
         conta.deposita(1000);
 
-        System.out.println("Cliente: " + conta.getTitular());
+        System.out.println("Cliente: " + conta.getTitular().getNome());
         System.out.println("CPF: " + cliente.getCpf());
         System.out.println("Profissao: " + cliente.getProfissao());
         System.out.println("Agencia: " + conta.getAgencia());
